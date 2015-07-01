@@ -6,6 +6,27 @@ var Game = {  MAX_DICE: 11,
             }
 
 
+var Board = [];
+
+function Field(id) {
+  this.id = id;
+}
+
+Field.prototype.addHotel = function(hotel) {
+  hotels.push(hotel);
+}
+
+
+var hotel_blue = { price: 20, charge: 40 };
+var hotel_red = { price: 40, charge: 80 };
+
+function hotel(color, charge, price) {
+  this.color = color;
+  this.charge = charge;
+  this.price = price;
+}
+
+
 function Player(id, name, funds, lastRoll, currentPosition, currentLap) {
   this.id = id;
   this.name = name;
@@ -26,6 +47,10 @@ Player.prototype.lap = function () {
     this.funds = this.funds + Game.LapBonus;
   }
 };
+
+Player.prototype.charge = function () {
+  this.funds = this.funds - charge;
+}
 
 Player.prototype.display = function () {
   var fundS = document.getElementById(this.name + "_funds");
