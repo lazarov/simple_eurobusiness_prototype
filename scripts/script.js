@@ -38,7 +38,8 @@ Player.prototype.display = function () {
   showLastRoll.innerHTML = this.lastRoll;
 };
 
-Player.prototype.roll = function(event) {
+Player.prototype.roll = function() {
+  console.log(this);
   this.lastRoll = this.draw();
   this.lap();
   this.currentPosition = this.currentPosition + this.lastRoll;
@@ -51,6 +52,7 @@ Player.prototype.roll = function(event) {
 var player1 = new Player(1, "player1", 1000, 0, 0, 0);
 var player2 = new Player(2, "player2", 1000, 0, 0, 0);
 
+players = [ player1, player2 ];
 
 function switch_players() {
   var rollButtons = document.getElementsByName('roll');
@@ -64,13 +66,25 @@ function switch_players() {
   }
 }
 
-function init() {
-  var rollButtons = document.getElementsByName("roll");
+function change_player1() {
+  var players = [player1, player2]
+  if (players[0] == 'player1') {
 
-  for (var i = 0; i < rollButtons.length; i++){
-    rollButtons[i].onclick = player1.roll();
   }
 }
 
 
-window.onload = roll();
+function rollHandler(player) {
+  return function() { player.roll() };
+}
+
+function init() {
+  var rollButtons = document.getElementsByName("roll");
+
+  for (var i = 0; i < rollButtons.length; i++){
+    rollButtons[i].onclick = rollHandler(players[i]);
+  }
+}
+
+
+window.onload = init;
