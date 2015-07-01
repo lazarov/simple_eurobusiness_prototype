@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Monopoly</title>
+  <meta charset ="utf-8">
+  <link rel="stylesheet" href="styles/styles.css" type="text/css" media="screen" />
+</head>
+<body>
+  <table id="player1_stats">
+    <tr>
+    <tr><th>Player1</th></tr>
+      <th>Last Roll</th>
+      <th>Current Position</th>
+      <th>Funds</th>
+      <th>Current Lap</th>
+    </tr>
+    <tr>
+     <td><span id="player1_last_Roll"></span></td>
+      <td><span id="player1_position"></span></td>
+      <td><span id="player1_funds"></span></td>
+      <td><span id="player1_currentLap"></span></td>
+    </tr>
+  </table>
+  <form id="player1_button">
+    <h3> Player 1 </h3>
+    <input type="button" name="roll" id="player1_rollButton" value="Roll">
+  </form>
+
+  <table id="player2_stats">
+    <tr>
+    <tr><th>Player2</th></tr>
+      <th>Last Roll</th>
+      <th>Current Position</th>
+      <th>Funds</th>
+      <th>Current Lap</th>
+    </tr>
+    <tr>
+      <td><span id="player2_last_Roll"></span></td>
+      <td><span id="player2_position"></span></td>
+      <td><span id="player2_funds"></span></td>
+      <td><span id="player2_currentLap"></span></td>
+    </tr>
+  </table>
+
+  <form id="player2_button">
+    <h3> Player 2 </h3>
+    <input type="button" name="roll" id="player2_rollButton" value="Roll">
+  </form>
+
+  <div id="board">
+    <table id="gameBoard">
+      <tr>
+        <td id="0">Start<div id="player1"></div><div id="player2"></div></td><td id="1">1</td><td id="2">2</td><td id="3">3</td>
+        <td id="4">4</td><td id="5">5</td><td id="6">6</td><td id="7">7</td><td id="8">8</td>
+      </tr>
+      <tr>
+        <td id="29">29</td><td class="hide"></td><td class="hide"></td><tdclass="hide"></td>
+        <td class="hide"></td><td class="hide"></td><td class="hide"></td>
+        <td class="hide"></td><td class="hide"></td><td id="9">9</td>
+
+      </tr>
+      <tr>
+        <td id="28">28</td><td class="hide"></td><td class="hide"></td><tdclass="hide"></td>
+        <td class="hide"></td><td class="hide"></td><td class="hide"></td>
+        <td class="hide"></td><td class="hide"></td><td id="10" class="right_field">10</td>
+      </tr>
+      <tr>
+        <td id="27">27</td><td class="hide"></td><td class="hide"></td><tdclass="hide"></td>
+        <td class="hide"></td><td class="hide"></td><td class="hide"></td>
+        <td class="hide"></td><td class="hide"></td><td id="11" class="right_field">11</td>
+      </tr>
+      <tr>
+        <td id="26">26</td><td class="hide"></td><td class="hide"></td><tdclass="hide"></td>
+        <td class="hide"></td><td class="hide"></td><td class="hide"></td>
+        <td class="hide"></td><td class="hide"></td><td id="12" class="right_field">12</td>
+      </tr>
+      <tr>
+        <td id="25">25</td><td class="hide"></td><td class="hide"></td><tdclass="hide"></td>
+        <td class="hide"></td><td class="hide"></td><td class="hide"></td>
+        <td class="hide"></td><td class="hide"></td><td id="13" class="right_field">13</td>
+      </tr>
+      <tr>
+        <td id="24">24</td><td class="hide"></td><td class="hide"></td><tdclass="hide"></td>
+        <td class="hide"></td><td class="hide"></td><td class="hide"></td>
+        <td class="hide"></td><td class="hide"></td><td id="14" class="right_field">14</td>
+      </tr>
+      <tr>
+        <td id="23">23</td><td id="22">22</td><td id="21">21</td><td id="20">20</td>
+        <td id="19">19</td><td id="18">18</td><td id="17">17</td><td id="16">16</td><td id="15">15</td>
+      </tr>
+    </table>
+  </div>
+  <script src="scripts/script.js"></script>
+</body>
+</html>
