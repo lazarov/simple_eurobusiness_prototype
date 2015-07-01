@@ -64,22 +64,13 @@ function switch_players() {
   }
 }
 
-function change_player1() {
-  var players = [player1, player2]
-  if (players[0] == 'player1') {
-
-  }
-}
-
 function init() {
-  var rollButtons = document.getElementById("roll");
+  var rollButtons = document.getElementsByName("roll");
 
   for (var i = 0; i < rollButtons.length; i++){
     rollButtons[i].onclick = player1.roll();
-    rollButtons[i].onclick = player2.roll();
   }
 }
 
 
-
-window.onload = init;
+window.onload = roll();
