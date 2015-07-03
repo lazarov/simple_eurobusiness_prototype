@@ -1,3 +1,5 @@
+
+// *********************** GAME *********************************
 var Game = {  MAX_DICE: 11,
               BoardSize: 30,
               LapBonus: 200,
@@ -5,27 +7,35 @@ var Game = {  MAX_DICE: 11,
               players: [ player1, player2 ]
             }
 
+// ********************** BOARD & HOSUES *************************
 
-var Board = [];
+var board = [];
+var houses = [];
 
 function Field(id) {
   this.id = id;
 }
 
-Field.prototype.addHotel = function(hotel) {
-  hotels.push(hotel);
+Field.prototype.addField = function() {
+  Board.push(Field);
 }
 
-
-var hotel_blue = { price: 20, charge: 40 };
-var hotel_red = { price: 40, charge: 80 };
-
-function hotel(color, charge, price) {
-  this.color = color;
-  this.charge = charge;
-  this.price = price;
+Field.prototype.addHouse = function(House) {
+  Houses.push(House);
 }
 
+// Add function which removes House from particular field
+
+var blueHouse = { price: 20, charge: 40 };
+var redHouse = { price: 40, charge: 80 };
+
+function House(player, field, type) {
+  this.player = player;
+  this.field = field;
+  this.type = type;
+}
+
+// ************************* PLAYER ******************************
 
 function Player(id, name, funds, lastRoll, currentPosition, currentLap) {
   this.id = id;
@@ -64,7 +74,6 @@ Player.prototype.display = function () {
 };
 
 Player.prototype.roll = function() {
-  console.log(this);
   this.lastRoll = this.draw();
   this.lap();
   this.currentPosition = this.currentPosition + this.lastRoll;
@@ -76,6 +85,8 @@ Player.prototype.roll = function() {
 
 var player1 = new Player(1, "player1", 1000, 0, 0, 0);
 var player2 = new Player(2, "player2", 1000, 0, 0, 0);
+
+// ***************** PAWN MOVE CONTROL *******************
 
 players = [ player1, player2 ];
 
@@ -94,7 +105,6 @@ function switch_players() {
 function change_player1() {
   var players = [player1, player2]
   if (players[0] == 'player1') {
-
   }
 }
 

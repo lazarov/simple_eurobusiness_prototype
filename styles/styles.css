@@ -6,6 +6,10 @@
   border: 3px solid black;
 }
 
+.jail td {
+  border: 1px solid red;
+}
+
 #player1_button {
   position: absolute;
   left: 200px;
