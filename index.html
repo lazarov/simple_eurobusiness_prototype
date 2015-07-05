@@ -23,6 +23,7 @@
   </table>
   <form id="player1_button">
     <h3> Player 1 </h3>
+    <span id="player1_message"></span>
     <input type="button" name="roll" id="player1_rollButton" value="Roll">
   </form>
 
@@ -44,6 +45,7 @@
 
   <form id="player2_button">
     <h3> Player 2 </h3>
+    <span id="player2_message"></span>
     <input type="button" name="roll" id="player2_rollButton" value="Roll">
   </form>
 
@@ -57,7 +59,6 @@
         <td id="29">29</td><td class="hide"></td><td class="hide"></td><tdclass="hide"></td>
         <td class="hide"></td><td class="hide"></td><td class="hide"></td>
         <td class="hide"></td><td class="hide"></td><td id="9">9</td>
-
       </tr>
       <tr>
         <td id="28">28</td><td class="hide"></td><td class="hide"></td><tdclass="hide"></td>
@@ -66,8 +67,14 @@
       </tr>
       <tr>
         <td id="27">27</td><td class="hide"></td><td class="hide"></td><tdclass="hide"></td>
-        <td class="hide"></td><td class="hide"></td><td class="hide"></td>
-        <td class="hide"></td><td class="hide"></td><td id="11" class="right_field">11</td>
+        <td id="message_box" colspan="3">
+          <div id="buy_house" class="hide">
+            Would like to buy house here ?
+            <input type="radio" name="house" value="Blue"/>
+            <input type="radio" name="house" value="Red"/>
+          </div>
+        </td><td class="hide"></td><td class="hide"></td>
+        <td id="11" class="right_field">11</td>
       </tr>
       <tr>
         <td id="26">26</td><td class="hide"></td><td class="hide"></td><tdclass="hide"></td>
@@ -90,6 +97,9 @@
       </tr>
     </table>
   </div>
+  <script src="scripts/player.js"></script>
+  <script src="scripts/house.js"></script>
+  <script src="scripts/board.js"></script>
   <script src="scripts/script.js"></script>
 </body>
 </html>

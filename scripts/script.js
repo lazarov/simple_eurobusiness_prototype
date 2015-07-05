@@ -7,84 +7,10 @@ var Game = {  MAX_DICE: 11,
               players: [ player1, player2 ]
             }
 
-// ********************** BOARD & HOSUES *************************
-
-var board = [];
-var houses = [];
-
-function Field(id) {
-  this.id = id;
-}
-
-Field.prototype.addField = function() {
-  Board.push(Field);
-}
-
-Field.prototype.addHouse = function(House) {
-  Houses.push(House);
-}
-
-// Add function which removes House from particular field
-
-var blueHouse = { price: 20, charge: 40 };
-var redHouse = { price: 40, charge: 80 };
-
-function House(player, field, type) {
-  this.player = player;
-  this.field = field;
-  this.type = type;
-}
-
 // ************************* PLAYER ******************************
 
-function Player(id, name, funds, lastRoll, currentPosition, currentLap) {
-  this.id = id;
-  this.name = name;
-  this.funds = funds;
-  this.lastRoll = lastRoll;
-  this.currentPosition = currentPosition;
-  this.currentLap = currentLap;
-}
-
-Player.prototype.draw = function() {
-  return Math.floor(Math.random() * Game.MAX_DICE + 2);
-};
-
-Player.prototype.lap = function () {
-    if (this.currentPosition + this.lastRoll > Game.BoardSize) {
-    this.currentPosition = this.currentPosition - Game.BoardSize;
-    this.currentLap = this.currentLap + 1;
-    this.funds = this.funds + Game.LapBonus;
-  }
-};
-
-Player.prototype.charge = function () {
-  this.funds = this.funds - charge;
-}
-
-Player.prototype.display = function () {
-  var fundS = document.getElementById(this.name + "_funds");
-  fundS.innerHTML = this.funds;
-  var showLap = document.getElementById(this.name + "_currentLap");
-  showLap.innerHTML = this.currentLap;
-  var showPosition = document.getElementById(this.name +"_position");
-  showPosition.innerHTML = this.currentPosition;
-  var showLastRoll = document.getElementById(this.name + "_last_Roll");
-  showLastRoll.innerHTML = this.lastRoll;
-};
-
-Player.prototype.roll = function() {
-  this.lastRoll = this.draw();
-  this.lap();
-  this.currentPosition = this.currentPosition + this.lastRoll;
-  document.getElementById(this.currentPosition).appendChild(document.getElementById(this.name));
-  player2.display();
-  player1.display();
-  switch_players();
-};
-
-var player1 = new Player(1, "player1", 1000, 0, 0, 0);
-var player2 = new Player(2, "player2", 1000, 0, 0, 0);
+var player1 = new Player(1, "player1", 1000, 0, 0, 0, false, 0);
+var player2 = new Player(2, "player2", 1000, 0, 0, 0, false, 0);
 
 // ***************** PAWN MOVE CONTROL *******************
 
@@ -108,12 +34,24 @@ function change_player1() {
   }
 }
 
-
 function rollHandler(player) {
-  return function() { player.roll() };
+  return function() {
+    player.roll()
+    player2.display();
+    player1.display();
+    switch_players();
+    showBuyHouseBox();
+  };
+}
+
+function showBuyHouseBox() {
+  var buyHouseBox = document.getElementById('buy_house');
+  buyHouseBox.className = "";
 }
 
 function init() {
+  BOARD.init();
+
   var rollButtons = document.getElementsByName("roll");
 
   for (var i = 0; i < rollButtons.length; i++){
