@@ -29,8 +29,8 @@ table#gameBoard {
 #player1 {
   margin-top: 0px;
   background-color: red;
-  height: 10px;
-  width: 10px;
+  height: 15px;
+  width: 15px;
   border: 3px solid red;
   margin: 20px;
   -webkit-border-radius: 10px;
@@ -41,8 +41,8 @@ table#gameBoard {
 #player2 {
   margin-top: 0px;
   background-color: blue;
-  height: 10px;
-  width: 10px;
+  height: 15px;
+  width: 15px;
   border: 3px solid blue;
   margin: 20px;
   -webkit-border-radius: 10px;
@@ -54,10 +54,30 @@ table#gameBoard {
   visibility: hidden;
 }
 
-.blue_house {
+#message_box {
+  padding: 7px;
+}
 
+.wrap_house {
+  position: relative;
+  width: 80%;
+  height: 80%;
+}
+
+.blue_house {
+  background-color: blue;
+  margin: 1px;
+  height: 10px;
+  width: 10px;
+  border: 3px solid blue;
+  float: right;
 }
 
 .red_house {
-
+  background-color: red;
+  margin: 1px;
+  height: 10px;
+  width: 10px;
+  border: 3px solid red;
+  float: right;
 }

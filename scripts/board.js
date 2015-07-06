@@ -85,3 +85,8 @@ Field.prototype.removeHouse = function(house) {
     }
   }
 }
+
+function displayRedHouseOnField() {
+  var redButton = document.getElementById("red_house");
+  redButton.onclick = document.getElementById(player1.currentPosition).appendChild(document.createElement("div")).className = "red_house";
+}
