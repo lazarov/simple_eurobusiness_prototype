@@ -41,6 +41,8 @@ function rollHandler(player) {
     player1.display();
     switch_players();
     showBuyHouseBox();
+    addBlueHouse(player);
+    addRedHouse(player);
   };
 }
 
@@ -51,6 +53,7 @@ function showBuyHouseBox() {
 
 function init() {
   BOARD.init();
+
 
   var rollButtons = document.getElementsByName("roll");
 

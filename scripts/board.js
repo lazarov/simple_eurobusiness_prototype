@@ -86,7 +86,20 @@ Field.prototype.removeHouse = function(house) {
   }
 }
 
-function displayRedHouseOnField() {
+function addRedHouse(player) {
   var redButton = document.getElementById("red_house");
-  redButton.onclick = document.getElementById(player1.currentPosition).appendChild(document.createElement("div")).className = "red_house";
+  var myHouse = document.createElement("div");
+  myHouse.setAttribute("class", "red_house");
+  redButton.onclick = function () {
+    document.getElementById(player.currentPosition).appendChild(myHouse);
+  }
+}
+
+function addBlueHouse(player) {
+  var blueButton = document.getElementById("blue_house");
+  var myHouse = document.createElement("div");
+  myHouse.setAttribute("class", "blue_house");
+  blueButton.onclick = function () {
+    document.getElementById(player.currentPosition).appendChild(myHouse);
+  }
 }
