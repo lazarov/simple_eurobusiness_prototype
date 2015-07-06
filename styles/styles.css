@@ -52,7 +52,9 @@
 }
 
 */
-
+.jail {
+  color: red;
+}
 
 .row {
   padding: 10px;
