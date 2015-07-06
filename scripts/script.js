@@ -34,16 +34,6 @@ function change_player1() {
   }
 }
 
-function rollHandler(player) {
-  return function() {
-    player.roll()
-    player2.display();
-    player1.display();
-    switch_players();
-    showBuyHouseBox();
-  };
-}
-
 function showBuyHouseBox() {
   var buyHouseBox = document.getElementById('buy_house');
   buyHouseBox.className = "";
@@ -51,13 +41,7 @@ function showBuyHouseBox() {
 
 function init() {
   BOARD.init();
-
-  var rollButtons = document.getElementsByName("roll");
-
-  for (var i = 0; i < rollButtons.length; i++){
-    rollButtons[i].onclick = rollHandler(players[i]);
-  }
+  GAME_CONTROLLER.init();
 }
-
 
 window.onload = init;

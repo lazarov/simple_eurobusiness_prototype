@@ -61,31 +61,6 @@ var BOARD = (function() {
 }());
 
 
-function Field(id, name) {
-  this.id = id;
-  this.name = name;
-  this.houses = [];
-}
-
-Field.prototype.hasHouses = function() {
-  this.houses.length > 0;
-}
-
-Field.prototype.addHouse = function(house) {
-  this.houses.push(house);
-}
-
-Field.prototype.removeHouse = function(house) {
-  var length = houses.length;
-
-  for(var i = length; i--;) {
-    if(houses[i] === house) {
-      houses.splice(i, 1);
-      return;
-    }
-  }
-}
-
 function displayRedHouseOnField() {
   var redButton = document.getElementById("red_house");
   redButton.onclick = document.getElementById(player1.currentPosition).appendChild(document.createElement("div")).className = "red_house";
