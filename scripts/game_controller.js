@@ -21,6 +21,8 @@ var GAME_CONTROLLER = (function(board, players) {
       player1.display();
       switch_players();
       showBuyHouseBox();
+      addRedHouse(player);
+      addBlueHouse(player);
     };
   }
 
