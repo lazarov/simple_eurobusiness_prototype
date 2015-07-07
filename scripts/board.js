@@ -61,6 +61,7 @@ var BOARD = (function() {
 }());
 
 
+<<<<<<< HEAD
 function Field(id, name) {
   this.id = id;
   this.name = name;
@@ -87,6 +88,9 @@ Field.prototype.removeHouse = function(house) {
 }
 
 function addRedHouse(player) {
+=======
+function displayRedHouseOnField() {
+>>>>>>> introduce-game-controller
   var redButton = document.getElementById("red_house");
   var myHouse = document.createElement("div");
   myHouse.setAttribute("class", "red_house");

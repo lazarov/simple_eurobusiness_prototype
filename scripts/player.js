@@ -1,3 +1,5 @@
+DAYS_IN_JAIL = 3
+
 function Player(id, name, funds, lastRoll, currentPosition, currentLap, inJail, daysInJail) {
   this.id = id;
   this.name = name;
@@ -7,6 +9,7 @@ function Player(id, name, funds, lastRoll, currentPosition, currentLap, inJail, 
   this.currentLap = currentLap;
   this.inJail = inJail;
   this.daysInJail = daysInJail;
+  this.skipLaps = 0;
 }
 
 Player.prototype.draw = function() {
@@ -21,7 +24,7 @@ Player.prototype.lap = function () {
   }
 };
 
-Player.prototype.charge = function () {
+Player.prototype.charge = function (charge) {
   this.funds = this.funds - charge;
 }
 
@@ -53,21 +56,21 @@ Player.prototype.noMessage = function() {
 }
 
 Player.prototype.positionCtrl = function() {
-    if(this.currentPosition != 8) {
+    if (this.currentPosition != 8) {
       this.currentPosition = this.currentPosition + this.lastRoll;
     } else if (this.currentPosition === 8 && this.inJail === false) {
       this.inJail = true;
       this.arrested();
-      this.daysInJail = 3;
+      this.daysInJail = DAYS_IN_JAIL;
       this.currentPosition = this.currentPosition + 0;
     } else if (this.inJail === true && this.daysInJail != 0) {
-          this.daysInJail -= 1;
+      this.daysInJail -= 1;
     } else if (this.inJail === true && this.daysInJail === 0) {
-        this.inJail = false;
-        this.currentPosition = this.currentPosition + this.lastRoll;
-        this.noMessage();
-      }
+      this.inJail = false;
+      this.currentPosition = this.currentPosition + this.lastRoll;
+      this.noMessage();
     }
+}
 
 Player.prototype.roll = function() {
   this.lastRoll = this.draw();

@@ -34,6 +34,7 @@ function change_player1() {
   }
 }
 
+<<<<<<< HEAD
 function rollHandler(player) {
   return function() {
     player.roll()
@@ -46,6 +47,8 @@ function rollHandler(player) {
   };
 }
 
+=======
+>>>>>>> introduce-game-controller
 function showBuyHouseBox() {
   var buyHouseBox = document.getElementById('buy_house');
   buyHouseBox.className = "";
@@ -53,6 +56,7 @@ function showBuyHouseBox() {
 
 function init() {
   BOARD.init();
+<<<<<<< HEAD
 
 
   var rollButtons = document.getElementsByName("roll");
@@ -60,7 +64,9 @@ function init() {
   for (var i = 0; i < rollButtons.length; i++){
     rollButtons[i].onclick = rollHandler(players[i]);
   }
+=======
+  GAME_CONTROLLER.init();
+>>>>>>> introduce-game-controller
 }
-
 
 window.onload = init;
